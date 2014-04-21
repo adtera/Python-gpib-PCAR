@@ -1,0 +1,81 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'dashboard.ui'
+#
+# Created: Thu Nov 14 09:56:06 2013
+#      by: PyQt4 UI code generator 4.9.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PySide import QtCore, QtGui
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    _fromUtf8 = lambda s: s
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName(_fromUtf8("MainWindow"))
+        MainWindow.resize(827, 600)
+        MainWindow.setMouseTracking(False)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8("../../../../../usr/share/pixmaps/cubeview48.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setWindowOpacity(1.0)
+        MainWindow.setAutoFillBackground(True)
+        MainWindow.setTabShape(QtGui.QTabWidget.Triangular)
+        self.centralwidget = QtGui.QWidget(MainWindow)
+        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        self.label = QtGui.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(550, 0, 271, 20))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("URW Chancery L"))
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setItalic(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName(_fromUtf8("label"))
+        self.line = QtGui.QFrame(self.centralwidget)
+        self.line.setGeometry(QtCore.QRect(-10, 30, 841, 20))
+        self.line.setFrameShape(QtGui.QFrame.HLine)
+        self.line.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line.setObjectName(_fromUtf8("line"))
+        self.btn = QtGui.QPushButton(self.centralwidget)
+        self.btn.setGeometry(QtCore.QRect(10, 120, 185, 27))
+        self.btn.setObjectName(_fromUtf8("btn"))
+        self.cmdbtn = QtGui.QCommandLinkButton(self.centralwidget)
+        self.cmdbtn.setGeometry(QtCore.QRect(10, 70, 185, 31))
+        self.cmdbtn.setCheckable(False)
+        self.cmdbtn.setObjectName(_fromUtf8("cmdbtn"))
+        self.widget = QtGui.QWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(20, 180, 171, 141))
+        self.widget.setObjectName(_fromUtf8("widget"))
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 827, 25))
+        self.menubar.setObjectName(_fromUtf8("menubar"))
+        self.menuSave = QtGui.QMenu(self.menubar)
+        self.menuSave.setObjectName(_fromUtf8("menuSave"))
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(MainWindow)
+        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionSave_as = QtGui.QAction(MainWindow)
+        self.actionSave_as.setObjectName(_fromUtf8("actionSave_as"))
+        self.menuSave.addAction(self.actionSave_as)
+        self.menubar.addAction(self.menuSave.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QObject.connect(self.cmdbtn, QtCore.SIGNAL(_fromUtf8("clicked()")), MainWindow.gogo)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "PCAR Spectroscopy", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("MainWindow", "Point Contact Andreev Reflection Spectroscopy", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn.setText(QtGui.QApplication.translate("MainWindow", "brr", None, QtGui.QApplication.UnicodeUTF8))
+        self.cmdbtn.setText(QtGui.QApplication.translate("MainWindow", "CommandLinkButton", None, QtGui.QApplication.UnicodeUTF8))
+        self.menuSave.setTitle(QtGui.QApplication.translate("MainWindow", "Save", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSave_as.setText(QtGui.QApplication.translate("MainWindow", "Save as", None, QtGui.QApplication.UnicodeUTF8))
+

@@ -1,0 +1,40 @@
+import Gpib,time,string
+
+l=Gpib.Gpib('lockin')
+l.clear()
+
+l.write("*IDN?")
+data=l.read(60)
+l.clear()
+print data
+
+def read_val():
+	l.write("SNAP?1,2,3,4") #get value of x,y,amplitude and phase (recorded simultaneously) as array
+	data=l.read(28)
+	l.clear()
+	return data
+
+f_amp = open('susc_amp.txt','wt')
+f_phase = open('susc_phase.txt','wt')
+f_x = open('susc_x.txt','wt')
+f_y = open('susc_y.txt','wt')
+start_time=time.time()
+
+while 1:
+	data = read_val()
+	t=time.time()-start_time
+	x=data.split(',')[0]
+	y=data.split(',')[1]
+	amp=data.split(',')[2]
+	phase=data.split(',')[3]
+	f_amp.write('%s %s\n'%(t,amp) )
+	f_phase.write('%s %s'%(t,phase) )
+	f_x.write('%s %s\n'%(t,x) )
+	f_y.write('%s %s\n'%(t,y) )
+	print x,y,amp,phase
+	time.sleep(0.2)
+	
+f_amp.close()
+	
+f_phase.close()
+
